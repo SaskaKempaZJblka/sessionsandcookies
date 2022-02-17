@@ -72,7 +72,12 @@ if(isset($_POST['pack']))
     {
     rozpakuj();
     echo "Pomyślnie rozpakowano";
-    
+    $unzipped= array(
+        'Czas' => date("Y-m-d H:i:s"),
+        'Dzialanie' => "Rozpakowano pliki",
+        'url' => "form.php",
+    );
+    array_push($_SESSION['journal'], $unzipped);
     }
     
 }
@@ -103,5 +108,12 @@ function rozpakuj(){
             }
            
         }
+        $zipped= array(
+            'Czas' => date("Y-m-d H:i:s"),
+            'Dzialanie' => "Spakowano pliki",
+            'url' => "form.php",
+        );
+        echo "Pomyślnie Spakowano";
+        array_push($_SESSION['journal'], $zipped);
     }
 ?>

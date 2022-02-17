@@ -13,7 +13,7 @@ if( $setBtn )
 	if($login=='root' && $passwd=='qaz'){
 		
 		$logged = array(
-			'logged' => date("Y-m-d H:i:s"),
+			'Czas' => date("Y-m-d H:i:s"),
 			'Dzialanie' => "Zalogowanie użytkownika",
 			'url' => "login.php",
 		);
@@ -44,8 +44,15 @@ if( $setBtn )
 			
 		}
 		header("Refresh:0");
-	} else
+	} else{
 		$msg = 'Access restricted X';
+		$failedLogin= array(
+			'Czas' => date("Y-m-d H:i:s"),
+			'Dzialanie' => "Nieudana proba logowania",
+			'url' => "login.php",
+		);
+		array_push($_SESSION['journal'], $failedLogin);
+	}
 }
 echo '<h3>Logowanie</h3>';
 if($secure==false || ($secure==true && $_SERVER['HTTPS'] ))

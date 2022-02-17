@@ -9,7 +9,7 @@ $li.= '<li>Obsługa formulrza</li>';
 echo '<ul>'.$li.'</ul>';
 echo '<h3>Witaj '.($user?$user:'gościu').'!</h3>';
 $siteLoaded = array(
-	'siteLoaded' => date("Y-m-d H:i:s"),
+	'Czas' => date("Y-m-d H:i:s"),
 	'Dzialanie' => "Załadowanie strony głównej",
 	'url' => "demo.php",
 );

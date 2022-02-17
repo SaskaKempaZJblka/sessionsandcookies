@@ -14,9 +14,11 @@ require("menu.php");
     //var_dump($_POST['journal']);
     if(isset($_POST['sessionDelete'])){
         session_unset();
+        header("Refresh:0");
     }
     elseif(isset($_POST['cookieDelete'])){
         setcookie('usrId', "", time()+0);
+        header("Refresh:0");
     }
     elseif(isset($_POST['save'])){
 
